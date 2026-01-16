@@ -1,4 +1,4 @@
-# ClockSimulation-repo
+# ClockSimulation
 Simulates different clocks running with drift
 * CLASS: CS 131 - DATA STRUCTURES.
  
