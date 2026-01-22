@@ -108,12 +108,12 @@ When creating a clock, you’ll be prompted to enter:
 
 ```
 ClockSimulation/
-├── CS131_FinalExam_ClockProgram/
-│   └── CS131_FinalExam_ClockProgram/
-│       ├── ClockInterface.java      # Main program interface and menu system
-│       ├── ClockTime.java           # Time and date representation
-│       ├── clockNames.java          # Clock implementations (concrete classes)
-│       └── [Other supporting files]
+├── src/
+│   ├── ClockInterface.java      # Main program interface and menu system
+│   ├── ClockTime.java           # Time and date representation
+│   ├── clockNames.java          # Clock implementations (concrete classes)
+│   └── [Other supporting files]
+│   
 ├── LICENSE                          # MIT License
 └── README.md                        # This file
 ```
