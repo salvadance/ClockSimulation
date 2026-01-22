@@ -202,14 +202,7 @@ public class clockNames extends clockTypes {
             
             // Display total drift in bold yellow text
             System.out.printf(YELLOW + "\tTotal Drift = " + BOLD + "%.6f seconds%n" + RESET, totalDrift);
-            /* 
-            System.out.printf(GREEN + BOLD + "%-20s " + RESET +
-            CYAN + "\t\tInitial Time: " + BOLD + "[%s " + initialTime.getAmPm() + "]" + RESET + 
-            PURPLE + "\t\tNew Time: " + BOLD + "[%s " + newTime.getAmPm() + "]" + RESET +
-            RED + "\t\tDrifted Time: " + BOLD + "[%s " + driftedTime.getAmPm() + "]" + RESET +
-            YELLOW + "\t\t Total Drift = " + BOLD + "%.6f seconds%n" + RESET,
-            CLOCK_NAME, initialTime.getTimeString(), newTime.getTimeString(), driftedTime.getTimeString(), totalDrift);
-            */
+            
         }
     }
 
@@ -299,14 +292,7 @@ public class clockNames extends clockTypes {
             
             // Display total drift in bold yellow text
             System.out.printf(YELLOW + "\tTotal Drift = " + BOLD + "%.6f seconds%n" + RESET, totalDrift);
-            /*
-            System.out.printf(GREEN + BOLD + "%-20s " + RESET +
-            CYAN + "\t\tInitial Time: " + BOLD + "[%s " + initialTime.getAmPm() + "]" + RESET + 
-            PURPLE + "\t\tNew Time: " + BOLD + "[%s " + newTime.getAmPm() + "]" + RESET +
-            RED + "\t\tDrifted Time: " + BOLD + "[%s " + driftedTime.getAmPm() + "]" + RESET +
-            YELLOW + "\t\t Total Drift = " + BOLD + "%.6f seconds%n" + RESET,
-            CLOCK_NAME, initialTime.getTimeString(), newTime.getTimeString(), driftedTime.getTimeString(), totalDrift);
-            */
+           
         }
     }
 
@@ -397,14 +383,7 @@ public class clockNames extends clockTypes {
             // Display total drift in bold yellow text
             System.out.printf(YELLOW + "\tTotal Drift = " + BOLD + "%.6f seconds%n" + RESET, totalDrift);
 
-            /* 
-            System.out.printf(GREEN + BOLD + "%-20s " + RESET +
-            CYAN + "\t\tInitial Time: " + BOLD + "[%s " + initialTime.getAmPm() + "]" + RESET + 
-            PURPLE + "\t\tNew Time: " + BOLD + "[%s " + newTime.getAmPm() + "]" + RESET +
-            RED + "\t\tDrifted Time: " + BOLD + "[%s " + driftedTime.getAmPm() + "]" + RESET +
-            YELLOW + "\t\t Total Drift = " + BOLD + "%.6f seconds%n" + RESET,
-            CLOCK_NAME, initialTime.getTimeString(), newTime.getTimeString(), driftedTime.getTimeString(), totalDrift);
-            */
+            
         }
     }
 
@@ -495,14 +474,7 @@ public class clockNames extends clockTypes {
             // Display total drift in bold yellow text
             System.out.printf(YELLOW + "\tTotal Drift = " + BOLD + "%.6f seconds%n" + RESET, totalDrift);
 
-            /*
-            System.out.printf(GREEN + BOLD + "%-20s " + RESET +
-            CYAN + "\t\tInitial Time: " + BOLD + "[%s " + initialTime.getAmPm() + "]" + RESET + 
-            PURPLE + "\t\tNew Time: " + BOLD + "[%s " + newTime.getAmPm() + "]" + RESET +
-            RED + "\t\tDrifted Time: " + BOLD + "[%s " + driftedTime.getAmPm() + "]" + RESET +
-            YELLOW + "\t\t Total Drift = " + BOLD + "%.6f seconds%n" + RESET,
-            CLOCK_NAME, initialTime.getTimeString(), newTime.getTimeString(), driftedTime.getTimeString(), totalDrift);
-            */
+
         }
     }
 }
