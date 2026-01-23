@@ -1,9 +1,9 @@
 package ClockProgram;
-import static ClockProgram.consoleModifiers.*;
+import static ClockProgram.ConsoleModifiers.*;
 
 // A combination of all clock names added into this program into a single class for ease of access and to improve organization.
 
-public class clockNames extends clockTypes {
+public class ClockNames extends ClockTypes {
 
     /* INFORMATION ABOUT THE CLASSES AND ITS FUNCTIONS
     * All of these pubic static classes extends their functionality from their derived clockTypes classes.
@@ -82,22 +82,22 @@ public class clockNames extends clockTypes {
             System.out.printf(GREEN + BOLD + "%-20s " + RESET, CLOCK_NAME); // Display clock name in bold green text
 
             // Display initial date in bold cyan text
-            System.out.printf(CYAN + "\tInitial Date: " + BOLD + "[%s]" + RESET, initialTime.getDateString());
+            System.out.printf(CYAN + "\tInitial Date: " + BOLD + "[%s]" + RESET, initialTime.dateToString());
 
             // Display initial time in bold cyan text
-            System.out.printf(CYAN + "\tInitial Time: " + BOLD + "[%s" + initialTime.getAmPm() + "]" + RESET, initialTime.getTimeString());
+            System.out.printf(CYAN + "\tInitial Time: " + BOLD + "[%s]" + RESET, initialTime.timeToString());
 
             // Display new date in bold purple text
-            System.out.printf(PURPLE + "\tNew Date: " + BOLD + "[%s]" + RESET, newTime.getDateString());
+            System.out.printf(PURPLE + "\tNew Date: " + BOLD + "[%s]" + RESET, newTime.dateToString());
 
             // Display new time in bold purple text
-            System.out.printf(PURPLE + "\tNew Time: " + BOLD + "[%s %s]" + RESET + "%n", newTime.getTimeString(), newTime.getAmPm());
+            System.out.printf(PURPLE + "\tNew Time: " + BOLD + "[%s]" + RESET + "%n", newTime.timeToString());
 
             // Display drifted date in bold red text
-            System.out.printf("%-20s" + RED + "\tDrifted Date: " + BOLD + "[%s]" + RESET, "", driftedTime.getDateString());
+            System.out.printf("%-20s" + RED + "\tDrifted Date: " + BOLD + "[%s]" + RESET, "", driftedTime.dateToString());
 
             // Display drifted time in bold red text
-            System.out.printf(RED + "\tDrifted Time: " + BOLD + "[%s %s]" + RESET, driftedTime.getTimeString(), driftedTime.getAmPm());
+            System.out.printf(RED + "\tDrifted Time: " + BOLD + "[%s]" + RESET, driftedTime.timeToString());
 
             // Display total drift in bold yellow text
             System.out.printf(YELLOW + "\tTotal Drift = " + BOLD + "%.6f seconds%n" + RESET, totalDrift);
@@ -110,8 +110,8 @@ public class clockNames extends clockTypes {
             PURPLE + "\tNew Time: " + BOLD + "[%s " + newTime.getAmPm() + "]" + RESET + "%n" + // Display new time in bold purple text
             RED + "Drifted Time: " + BOLD + "[%s " + driftedTime.getAmPm() + "]" + RESET + // Display drifted time in bold red text
             YELLOW + "\tTotal Drift = " + BOLD + "%.6f seconds%n" + RESET, // Display total drift in bold yellow text
-            CLOCK_NAME, initialTime.getDateString(), initialTime.getTimeString(), newTime.getDateString(), 
-            newTime.getTimeString(), driftedTime.getTimeString(), totalDrift);
+            CLOCK_NAME, initialTime.dateToString(), initialTime.timeToString(), newTime.dateToString(), 
+            newTime.timeToString(), driftedTime.timeToString(), totalDrift);
             */
         }
     }
@@ -183,22 +183,22 @@ public class clockNames extends clockTypes {
             System.out.printf(GREEN + BOLD + "%-20s " + RESET, CLOCK_NAME); // Display clock name in bold green text
 
             // Display initial date in bold cyan text
-            System.out.printf(CYAN + "\tInitial Date: " + BOLD + "[%s]" + RESET, initialTime.getDateString());
+            System.out.printf(CYAN + "\tInitial Date: " + BOLD + "[%s]" + RESET, initialTime.dateToString());
 
             // Display initial time in bold cyan text
-            System.out.printf(CYAN + "\tInitial Time: " + BOLD + "[%s" + initialTime.getAmPm() + "]" + RESET, initialTime.getTimeString());
+            System.out.printf(CYAN + "\tInitial Time: " + BOLD + "[%s]" + RESET, initialTime.timeToString());
 
             // Display new date in bold purple text
-            System.out.printf(PURPLE + "\tNew Date: " + BOLD + "[%s]" + RESET, newTime.getDateString());
+            System.out.printf(PURPLE + "\tNew Date: " + BOLD + "[%s]" + RESET, newTime.dateToString());
 
             // Display new time in bold purple text
-            System.out.printf(PURPLE + "\tNew Time: " + BOLD + "[%s %s]" + RESET + "%n", newTime.getTimeString(), newTime.getAmPm());
+            System.out.printf(PURPLE + "\tNew Time: " + BOLD + "[%s]" + RESET + "%n", newTime.timeToString());
 
             // Display drifted date in bold red text
-            System.out.printf("%-20s" + RED + "\tDrifted Date: " + BOLD + "[%s]" + RESET, "", driftedTime.getDateString());
+            System.out.printf("%-20s" + RED + "\tDrifted Date: " + BOLD + "[%s]" + RESET, "", driftedTime.dateToString());
 
             // Display drifted time in bold red text
-            System.out.printf(RED + "\tDrifted Time: " + BOLD + "[%s %s]" + RESET, driftedTime.getTimeString(), driftedTime.getAmPm());
+            System.out.printf(RED + "\tDrifted Time: " + BOLD + "[%s]" + RESET, driftedTime.timeToString());
             
             // Display total drift in bold yellow text
             System.out.printf(YELLOW + "\tTotal Drift = " + BOLD + "%.6f seconds%n" + RESET, totalDrift);
@@ -273,22 +273,22 @@ public class clockNames extends clockTypes {
             System.out.printf(GREEN + BOLD + "%-20s " + RESET, CLOCK_NAME); // Display clock name in bold green text
 
             // Display initial date in bold cyan text
-            System.out.printf(CYAN + "\tInitial Date: " + BOLD + "[%s]" + RESET, initialTime.getDateString());
+            System.out.printf(CYAN + "\tInitial Date: " + BOLD + "[%s]" + RESET, initialTime.dateToString());
 
             // Display initial time in bold cyan text
-            System.out.printf(CYAN + "\tInitial Time: " + BOLD + "[%s" + initialTime.getAmPm() + "]" + RESET, initialTime.getTimeString());
+            System.out.printf(CYAN + "\tInitial Time: " + BOLD + "[%s]" + RESET, initialTime.timeToString());
 
             // Display new date in bold purple text
-            System.out.printf(PURPLE + "\tNew Date: " + BOLD + "[%s]" + RESET, newTime.getDateString());
+            System.out.printf(PURPLE + "\tNew Date: " + BOLD + "[%s]" + RESET, newTime.dateToString());
 
             // Display new time in bold purple text
-            System.out.printf(PURPLE + "\tNew Time: " + BOLD + "[%s %s]" + RESET + "%n", newTime.getTimeString(), newTime.getAmPm());
+            System.out.printf(PURPLE + "\tNew Time: " + BOLD + "[%s]" + RESET + "%n", newTime.timeToString());
 
             // Display drifted date in bold red text
-            System.out.printf("%-20s" + RED + "\tDrifted Date: " + BOLD + "[%s]" + RESET, "", driftedTime.getDateString());
+            System.out.printf("%-20s" + RED + "\tDrifted Date: " + BOLD + "[%s]" + RESET, "", driftedTime.dateToString());
 
             // Display drifted time in bold red text
-            System.out.printf(RED + "\tDrifted Time: " + BOLD + "[%s %s]" + RESET, driftedTime.getTimeString(), driftedTime.getAmPm());
+            System.out.printf(RED + "\tDrifted Time: " + BOLD + "[%s]" + RESET, driftedTime.timeToString());
             
             // Display total drift in bold yellow text
             System.out.printf(YELLOW + "\tTotal Drift = " + BOLD + "%.6f seconds%n" + RESET, totalDrift);
@@ -363,22 +363,22 @@ public class clockNames extends clockTypes {
             System.out.printf(GREEN + BOLD + "%-20s " + RESET, CLOCK_NAME); // Display clock name in bold green text
 
             // Display initial date in bold cyan text
-            System.out.printf(CYAN + "\tInitial Date: " + BOLD + "[%s]" + RESET, initialTime.getDateString());
+            System.out.printf(CYAN + "\tInitial Date: " + BOLD + "[%s]" + RESET, initialTime.dateToString());
 
             // Display initial time in bold cyan text
-            System.out.printf(CYAN + "\tInitial Time: " + BOLD + "[%s" + initialTime.getAmPm() + "]" + RESET, initialTime.getTimeString());
+            System.out.printf(CYAN + "\tInitial Time: " + BOLD + "[%s]" + RESET, initialTime.timeToString());
 
             // Display new date in bold purple text
-            System.out.printf(PURPLE + "\tNew Date: " + BOLD + "[%s]" + RESET, newTime.getDateString());
+            System.out.printf(PURPLE + "\tNew Date: " + BOLD + "[%s]" + RESET, newTime.dateToString());
 
             // Display new time in bold purple text
-            System.out.printf(PURPLE + "\tNew Time: " + BOLD + "[%s %s]" + RESET + "%n", newTime.getTimeString(), newTime.getAmPm());
+            System.out.printf(PURPLE + "\tNew Time: " + BOLD + "[%s]" + RESET + "%n", newTime.timeToString());
 
             // Display drifted date in bold red text
-            System.out.printf("%-20s" + RED + "\tDrifted Date: " + BOLD + "[%s]" + RESET, "", driftedTime.getDateString());
+            System.out.printf("%-20s" + RED + "\tDrifted Date: " + BOLD + "[%s]" + RESET, "", driftedTime.dateToString());
 
             // Display drifted time in bold red text
-            System.out.printf(RED + "\tDrifted Time: " + BOLD + "[%s %s]" + RESET, driftedTime.getTimeString(), driftedTime.getAmPm());
+            System.out.printf(RED + "\tDrifted Time: " + BOLD + "[%s]" + RESET, driftedTime.timeToString());
             
             // Display total drift in bold yellow text
             System.out.printf(YELLOW + "\tTotal Drift = " + BOLD + "%.6f seconds%n" + RESET, totalDrift);
@@ -454,22 +454,22 @@ public class clockNames extends clockTypes {
             System.out.printf(GREEN + BOLD + "%-20s " + RESET, CLOCK_NAME); // Display clock name in bold green text
 
             // Display initial date in bold cyan text
-            System.out.printf(CYAN + "\tInitial Date: " + BOLD + "[%s]" + RESET, initialTime.getDateString());
+            System.out.printf(CYAN + "\tInitial Date: " + BOLD + "[%s]" + RESET, initialTime.dateToString());
 
             // Display initial time in bold cyan text
-            System.out.printf(CYAN + "\tInitial Time: " + BOLD + "[%s" + initialTime.getAmPm() + "]" + RESET, initialTime.getTimeString());
+            System.out.printf(CYAN + "\tInitial Time: " + BOLD + "[%s]" + RESET, initialTime.timeToString());
 
             // Display new date in bold purple text
-            System.out.printf(PURPLE + "\tNew Date: " + BOLD + "[%s]" + RESET, newTime.getDateString());
+            System.out.printf(PURPLE + "\tNew Date: " + BOLD + "[%s]" + RESET, newTime.dateToString());
 
             // Display new time in bold purple text
-            System.out.printf(PURPLE + "\tNew Time: " + BOLD + "[%s %s]" + RESET + "%n", newTime.getTimeString(), newTime.getAmPm());
+            System.out.printf(PURPLE + "\tNew Time: " + BOLD + "[%s]" + RESET + "%n", newTime.timeToString());
 
             // Display drifted date in bold red text
-            System.out.printf("%-20s" + RED + "\tDrifted Date: " + BOLD + "[%s]" + RESET, "", driftedTime.getDateString());
+            System.out.printf("%-20s" + RED + "\tDrifted Date: " + BOLD + "[%s]" + RESET, "", driftedTime.dateToString());
 
             // Display drifted time in bold red text
-            System.out.printf(RED + "\tDrifted Time: " + BOLD + "[%s %s]" + RESET, driftedTime.getTimeString(), driftedTime.getAmPm());
+            System.out.printf(RED + "\tDrifted Time: " + BOLD + "[%s]" + RESET, driftedTime.timeToString());
             
             // Display total drift in bold yellow text
             System.out.printf(YELLOW + "\tTotal Drift = " + BOLD + "%.6f seconds%n" + RESET, totalDrift);

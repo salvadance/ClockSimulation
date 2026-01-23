@@ -2,7 +2,7 @@ package ClockProgram;
 
 // A combination of all clock types added into this program into a single class for ease of access and to improve organization.
 
-public abstract class clockTypes {
+public abstract class ClockTypes {
 
     /* INFORMATION ABOUT THE CLASSES AND ITS FUNCTIONS
     * All of these abstract class are derived from the superclass Clock which extends their functionality and allows it to be passed down to clockNames().java.

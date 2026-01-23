@@ -13,11 +13,11 @@
 * New VERSION v13.25 Changes:
   - Added date functionality to ClockTime.java to keep track of day, month, and year.
     - Edited ClockTime.java to include constructors, fields and string formatted getters method to accommodate for date functionality.
-    - Edited clockNames.java concrete classes displayTime methods to accommodate for date functionality.
+    - Edited ClockNames.java concrete classes displayTime methods to accommodate for date functionality.
     - Added date functionality in ClockInterface.java createCustomClocks() method to get user-defined day, month, and year.
-  - Added javadoc comments to newly edited methods in clockNames.java and ClockInterface.java.
-  - Edited clockNames.java methods reset() and fullReset() to include javadoc comments explaining their functionality.
-  - Edited clockNames.java methods displayTime() to include javadoc comments explaining their functionality.
+  - Added javadoc comments to newly edited methods in ClockNames.java and ClockInterface.java.
+  - Edited ClockNames.java methods reset() and fullReset() to include javadoc comments explaining their functionality.
+  - Edited ClockNames.java methods displayTime() to include javadoc comments explaining their functionality.
   - Edited ClockInterface.java methods createClocksMenu(), resetMenu(), printClocksInfoTable(), displayClocksTimes(), quitMessage(), initializeClockList(), createCustomClocks(), and isLeapYear() to include javadoc comments explaining their functionality.
   - No changes were made to the logic or functionality of the code, only documentation was added for clarity.
  
@@ -28,7 +28,7 @@ package ClockProgram;
 import java.time.*;
 import java.util.*;
 import java.math.*;
-import static ClockProgram.consoleModifiers.*;
+import static ClockProgram.ConsoleModifiers.*;
 
 // This class contains most of the major functionality of the menu and handling of the inputs from user and outputting the desired information to the user.
 public class ClockInterface{
@@ -119,7 +119,7 @@ public class ClockInterface{
 
                 String clockName = GREEN + "Clock's Name: " + BOLD + clocks.getName() + RESET;
                 String clockType = BLUE + "\t\tClock's Type: " + BOLD + clocks.getClockType() + RESET;
-                String reportedTime = WHITE + "\t\tReported Time: " + BOLD + clocks.driftedTime.toString() + " " + clocks.driftedTime.getAmPm() + RESET;
+                String reportedTime = WHITE + "\t\tReported Time: " + BOLD + clocks.driftedTime.toString() + RESET;
                 String clockDrift = YELLOW + "\t\tClock's Drift (per Second): " + BOLD + formattedClockDrift + RESET;
                 
                 typeWrite(clockName, 8);
@@ -320,11 +320,11 @@ public class ClockInterface{
     public static void initializeClockList(LocalDateTime currentTimeDate) {
         clockList.clear();
         
-        clockList.add(new clockNames.SundialClock(new ClockTime(currentTimeDate)));
-        clockList.add(new clockNames.CuckooClock(new ClockTime(currentTimeDate)));
-        clockList.add(new clockNames.GrandfatherClock(new ClockTime(currentTimeDate)));
-        clockList.add(new clockNames.WristClock(new ClockTime(currentTimeDate)));
-        clockList.add(new clockNames.AtomicClock(new ClockTime(currentTimeDate)));
+        clockList.add(new ClockNames.SundialClock(new ClockTime(currentTimeDate)));
+        clockList.add(new ClockNames.CuckooClock(new ClockTime(currentTimeDate)));
+        clockList.add(new ClockNames.GrandfatherClock(new ClockTime(currentTimeDate)));
+        clockList.add(new ClockNames.WristClock(new ClockTime(currentTimeDate)));
+        clockList.add(new ClockNames.AtomicClock(new ClockTime(currentTimeDate)));
     }
 
     /**
@@ -339,11 +339,11 @@ public class ClockInterface{
     public static void initializeClockList(int hour, int minute, int second, int day, int month, int year) {
         clockList.clear();
         
-        clockList.add(new clockNames.SundialClock(new ClockTime(hour, minute, second, day, month, year)));
-        clockList.add(new clockNames.CuckooClock(new ClockTime(hour, minute, second, day, month, year)));
-        clockList.add(new clockNames.GrandfatherClock(new ClockTime(hour, minute, second, day, month, year)));
-        clockList.add(new clockNames.WristClock(new ClockTime(hour, minute, second, day, month, year)));
-        clockList.add(new clockNames.AtomicClock(new ClockTime(hour, minute, second, day, month, year)));
+        clockList.add(new ClockNames.SundialClock(new ClockTime(hour, minute, second, day, month, year)));
+        clockList.add(new ClockNames.CuckooClock(new ClockTime(hour, minute, second, day, month, year)));
+        clockList.add(new ClockNames.GrandfatherClock(new ClockTime(hour, minute, second, day, month, year)));
+        clockList.add(new ClockNames.WristClock(new ClockTime(hour, minute, second, day, month, year)));
+        clockList.add(new ClockNames.AtomicClock(new ClockTime(hour, minute, second, day, month, year)));
     }
 
     /**
