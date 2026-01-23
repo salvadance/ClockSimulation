@@ -1,6 +1,6 @@
 package ClockProgram;
 
-public abstract class Clock extends Object {
+public abstract class Clock {
     // Initialized protected primitive and wrapper objects to ensure that only the classes and derived classes are to access them.
     protected String CLOCK_TYPE;
     protected String CLOCK_NAME;
