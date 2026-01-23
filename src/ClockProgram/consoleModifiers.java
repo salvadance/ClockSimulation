@@ -2,7 +2,7 @@ package ClockProgram;
 
 import java.util.*;
 
-public class consoleModifiers {
+public class ConsoleModifiers {
 
     // All of these public static final strings contain special codes that allows text/string and their colors (text and backdrop) and fonts to be modified by programmer.
     public static final String RESET = "\u001B[0m"; // Returns back to standard format of string outputs in terminal.

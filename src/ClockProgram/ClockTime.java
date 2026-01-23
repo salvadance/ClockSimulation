@@ -35,25 +35,6 @@ public class ClockTime {
 
     }
 
-    // Returns the clock's hour portion.
-    public int getHours() {
-    	return hours;
-    }
-    
-    // Returns the clock's minute portion.
-    public int getMinutes() {
-    	return minutes;
-    }
-    
-    // Returns the clock's second portion.
-    public int getSeconds() {
-    	return seconds;
-    }
-
-    // Returns if it's either AM or PM depending on the hour of ClockTime, if hours is less than 12 then AM is returned or greater than 12 returns PM.
-    public String getAmPm() {
-        return (hours < 12) ? "AM" : "PM";
-    }
 
     // Calculates the tick that is added to the clock's hour, minute, & second depending on the specified time (converted to secs) set by the user in the tick menu option.
     public void addTimeSec(long specifiedSeconds) {
@@ -194,7 +175,7 @@ public class ClockTime {
      * Returns the time in "HH:MM:SS" format.
      * @return A string representing the time.
      */
-    public String getTimeString() {
+    public String timeToString() {
         return String.format("%02d:%02d:%02d", this.hours, this.minutes, this.seconds);
     }
 
@@ -202,7 +183,7 @@ public class ClockTime {
      * Returns the date in "MM-DD-YYYY" format.
      * @return A string representing the date.
      */
-    public String getDateString() {
+    public String dateToString() {
         return String.format("%02d-%02d-%04d", this.month, this.day, this.year);
     }
 }
