@@ -25,15 +25,20 @@
 */
 
 package ClockProgram;
+import static ClockProgram.ConsoleModifiers.*;
+import java.math.*;
 import java.time.*;
 import java.util.*;
-import java.math.*;
-import static ClockProgram.ConsoleModifiers.*;
 
 // This class contains most of the major functionality of the menu and handling of the inputs from user and outputting the desired information to the user.
 public class ClockInterface{
-    private static char userOption;
-    private static ArrayList<Clock> clockList = new ArrayList<Clock>();
+    private char userOption;
+    private ArrayList<Clock> clockList;
+
+
+    public ClockInterface() {
+        clockList = new ArrayList<>();
+    }
 
     /**************************************************************************************************							 
      * 								[Menu Methods]
@@ -43,7 +48,7 @@ public class ClockInterface{
      ***************************************************************************************************/
     
     // A method that prints the menu selection screen for the user.   
-    public static void printMenu() {
+    public void printMenu() {
         System.out.println(WHITE_BACKGROUND + BLACK + BOLD + "\nTICK-TOCK EXPLORE PAGE" + RESET);
         System.out.println(GREEN + BOLD + "[C]" + RESET + WHITE + ITALICS + " - Create New Clocks / Change Time" + RESET);
         System.out.println(GREEN + BOLD + "[V]" + RESET + WHITE + ITALICS + " - View Clocks' Information Table" + RESET);
@@ -55,46 +60,29 @@ public class ClockInterface{
     }
 
     // A method that contains the logic for the selections that the user makes from the menu.
-    public static void clockMenu(Scanner scnr) {
+    public void clockMenu(Scanner scnr) {
        do {
             printMenu();
             userOption = scnr.next().charAt(0);
 
             switch (userOption) {
-                // This option, when selected, creates the new sets of clocks.
-                case 'C':   
-                    createClocksMenu(scnr);
-                    break;
-
-                // This option, when selected, allows the user to check all of the clocks' information tables.
-                case 'V':   
-                    printClocksInfoTable(scnr);
-                    break;
-
-                // This option, when selected, displays all of the clocks' times (initall, new, & drifted) 
-                // and how much the drift depending on the specified time by user.
-                case 'D':   
-                    displayClocksTimes();
-                    break;
-
-                // This option, when selected, displays all of the clocks' times (initall, new, & drifted) 
-                // and how much the drift depending on the specified time by user.
-                case 'T':
-                    tickSelection(scnr);
-                    break; 
-                
-                // This option, when selected, allows the user to reset all clocks by either setting back to a previous time 
-                // or performing a full reset back to 0 hour time.
-                case 'R':
-                    resetMenu(scnr);
-                    break;
-
-                // This option, when selected, terminates the program but before that it gives a warm holiday goodbye to the user.
-                case 'Q':
-                    quitMessage();
-                    break;
+                case 'C' -> createClocksMenu(scnr);
+                case 'V' -> printClocksInfoTable();
+                case 'D' -> displayClocksTimes();
+                case 'T' -> tickSelection(scnr);
+                case 'R' -> resetMenu(scnr);
+                case 'Q' -> quitMessage();
             }
-
+           // This option, when selected, creates the new sets of clocks.
+           // This option, when selected, allows the user to check all of the clocks' information tables.
+           // This option, when selected, displays all of the clocks' times (initall, new, & drifted)
+           // and how much the drift depending on the specified time by user.
+           // This option, when selected, displays all of the clocks' times (initall, new, & drifted)
+           // and how much the drift depending on the specified time by user.
+           // This option, when selected, allows the user to reset all clocks by either setting back to a previous time
+           // or performing a full reset back to 0 hour time.
+           // This option, when selected, terminates the program but before that it gives a warm holiday goodbye to the user.
+           
         } while (userOption != 'Q');
     }
 
@@ -104,7 +92,7 @@ public class ClockInterface{
      * The drift per second is formatted to show exact decimal places using BigDecimal.
      * @param scnr is a passed Scanner object.
      */
-    private static void printClocksInfoTable(Scanner scr) {
+    private void printClocksInfoTable() {
         // If clockList() is empty, this must mean that the user hasn't created any clocks, therefore none can be viewed.
         if (clockList.isEmpty()) {
             System.out.println(RED + BOLD + UNDERLINE + "\nERROR: No clocks found to be viewed... You must first create a clock(s)" + RESET);
@@ -119,7 +107,7 @@ public class ClockInterface{
 
                 String clockName = GREEN + "Clock's Name: " + BOLD + clocks.getName() + RESET;
                 String clockType = BLUE + "\t\tClock's Type: " + BOLD + clocks.getClockType() + RESET;
-                String reportedTime = WHITE + "\t\tReported Time: " + BOLD + clocks.driftedTime.toString() + RESET;
+                String reportedTime = WHITE + "\t\tReported Time: " + BOLD + clocks.driftedTime.timeToString() + RESET;
                 String clockDrift = YELLOW + "\t\tClock's Drift (per Second): " + BOLD + formattedClockDrift + RESET;
                 
                 typeWrite(clockName, 8);
@@ -141,7 +129,7 @@ public class ClockInterface{
      * This method displays all of the clocks' times (initial, new, & drifted) and how much the drift depending on the specified time by user.
      * Checks for empty clockList and prints an appropriate error message.
      */
-    private static void displayClocksTimes() {
+    private void displayClocksTimes() {
         // If clockList() is empty, that must mean that user hasn't created any clocks, therefore no clocks and their times can be displayed.
                 if (clockList.isEmpty()) {
                     System.out.println("\n" + RED + BOLD + UNDERLINE + "ERROR: No clocks found to be displayed... You must first create a clock(s)." + RESET);
@@ -169,7 +157,7 @@ public class ClockInterface{
         2. Hard Reset - calls the fullReset() method for each clock in clockList.
      * @param scnr is a passed Scanner object.
     */
-    private static void resetMenu(Scanner scnr) {
+    private void resetMenu(Scanner scnr) {
         char userOption = ' ';
 
         // If clockList() is empty, that must mean that the user haven't created any clocks, therefore no clocks can be reset.
@@ -211,7 +199,7 @@ public class ClockInterface{
     /** 
      * This method displays a colorful goodbye message when the user decides to quit the program.
     */
-    private static void quitMessage() {
+    private void quitMessage() {
         // Good bye message variable initialization.
         String goodByeMessage = "\nGoodbye! Thank you for using the Tick-Tock Clock Program!";
         // Get current date to determine if there is a special holiday message to display.
@@ -284,7 +272,7 @@ public class ClockInterface{
         2. Custom Time - calls the createCustomClocks() method to get user-defined time and then calls initializeClockList() method with user-defined time as arguments.
      * @param scnr is a passed Scanner object.
     */
-    private static void createClocksMenu(Scanner scnr) {
+    private void createClocksMenu(Scanner scnr) {
         char userOption = '0';
         
         // Prompts the user to either create clocks based on their system time or their own custom time.
@@ -317,7 +305,7 @@ public class ClockInterface{
      * Initializes clockList clocks with system's current  time as arguments
      * @param LocalDateTime is a  object that contains value of System time.
      */
-    public static void initializeClockList(LocalDateTime currentTimeDate) {
+    public void initializeClockList(LocalDateTime currentTimeDate) {
         clockList.clear();
         
         clockList.add(new ClockNames.SundialClock(new ClockTime(currentTimeDate)));
@@ -336,7 +324,7 @@ public class ClockInterface{
      * @param month an int for month for concrete clock type class constructor
      * @param year an int for year for concrete clock type class constructor
      */
-    public static void initializeClockList(int hour, int minute, int second, int day, int month, int year) {
+    public void initializeClockList(int hour, int minute, int second, int day, int month, int year) {
         clockList.clear();
         
         clockList.add(new ClockNames.SundialClock(new ClockTime(hour, minute, second, day, month, year)));
@@ -350,7 +338,7 @@ public class ClockInterface{
      * Method that gets user-defined values for clocks' time
      * @param Scanner object is passed
      */
-    public static void createCustomClocks(Scanner scnr) {
+    public void createCustomClocks(Scanner scnr) {
         int userHours = -1;
         int userMinutes = -1;
         int userSeconds = -1;
@@ -444,7 +432,7 @@ public class ClockInterface{
 	 * Loops until valid value is obtained and catching exceptions.
 	 * @return a valid value
 	 */
-    private static int getValidCreateClocksData(Scanner scnr, String message, String errorMessage, int lowerLimit, int higherLimit) {
+    private int getValidCreateClocksData(Scanner scnr, String message, String errorMessage, int lowerLimit, int higherLimit) {
     	// initialize variables
     	int timeValue = 0;
     	boolean isValidData = false;
@@ -490,7 +478,7 @@ public class ClockInterface{
      * If not, the tickClocks() function is called.
      * @param scnr is a passed Scanner object.
     */
-    private static void tickSelection(Scanner scnr) {
+    private void tickSelection(Scanner scnr) {
         // If clockList() is empty, that must mean that the user haven't created any clocks, therefore no clocks can be ticked.
         if (clockList.isEmpty()) {
             System.out.println(RED + BOLD + UNDERLINE + "\nERROR: No clocks found to be ticked... You must first create a clock(s)." + RESET);
@@ -515,7 +503,7 @@ public class ClockInterface{
      * @param prompt a message to prompt user for type of value obtained
      * @return returns a valid tick value
      */
-    private static int checkValidTickValue(Scanner scnr, String prompt) {
+    private int checkValidTickValue(Scanner scnr, String prompt) {
         int tickValue = -1; //initialize tickValue
         
         boolean isValidData = false; //initialize isValidData
@@ -553,7 +541,7 @@ public class ClockInterface{
 	* Uses helper methods to validate user input.
 	* @param scnr is a passed Scanner object.
 	*/
-    public static void tickClocks(Scanner scnr) {
+    public void tickClocks(Scanner scnr) {
         final long  SECONDS_IN_MINUTE = 60;
         final long SECONDS_IN_HOUR = SECONDS_IN_MINUTE * 60;
         final long SECONDS_IN_DAY = SECONDS_IN_HOUR * 24;
@@ -606,7 +594,9 @@ public class ClockInterface{
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
 
-        ClockInterface.clockMenu(scnr);
+        ClockInterface clockSimulation = new ClockInterface();
+
+        clockSimulation.clockMenu(scnr);
 
         scnr.close();
     }
