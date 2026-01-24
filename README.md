@@ -50,24 +50,42 @@ Originally developed as a final exam project for CS 131 - Data Structures, this 
 1. **Navigate to the source directory**:
    
    ```bash
-   cd CS131_FinalExam_ClockProgram/CS131_FinalExam_ClockProgram
+   cd ClockSimulation
    ```
-1. **Compile the Java files**:
+1. **Compile the Java files preferably to a bin directory**:
+   
+   ```bash
+   javac -d bin src\ClockProgram\*.java
+   ```
+   ----------------or-------------------------------
    
    ```bash
    javac *.java
    ```
+   
 1. **Run the application**:
    
-   ```bash
-   java ClockInterface
-   ```
+    ```bash
+    java -cp bin ClockProgram.ClockInterface
+    ```
+    -----------------or--------------------------
+    
+    ```bash
+    java ClockProgram.ClockInterface
+    ```
 
 ## Usage
 
 ### Starting the Application
 
 Run the main class to start the interactive menu:
+
+If created a bin:
+    
+```bash
+java -cp bin ClockProgram.ClockInterface
+```
+-----------------or--------------------------
 
 ```bash
 java ClockInterface
@@ -108,11 +126,12 @@ When creating a clock, you’ll be prompted to enter:
 
 ```
 ClockSimulation/
-├── src/
-│   ├── ClockInterface.java      # Main program interface and menu system
-│   ├── ClockTime.java           # Time and date representation
-│   ├── clockNames.java          # Clock implementations (concrete classes)
-│   └── [Other supporting files]
+├── src
+|   ├── ClockProgram
+│       ├── ClockInterface.java      # Main program interface and menu system
+│       ├── ClockTime.java           # Time and date representation
+│       ├── clockNames.java          # Clock implementations (concrete classes)
+│       └── [Other supporting files]
 │   
 ├── LICENSE                          # MIT License
 └── README.md                        # This file
@@ -146,7 +165,7 @@ ClockSimulation/
   - `createClocksMenu()`: Creates custom clock instances
   - `resetMenu()`: Reset functionality for clocks
   - `printClocksInfoTable()`: Displays clock parameters
-  - `displayClocksTimes()`: Shows current times
+  - `displayClocksTimes()`: Shows all clocks' times
   - `initializeClockList()`: Initializes clock collection
 
 ### Design Patterns
