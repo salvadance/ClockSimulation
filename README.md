@@ -45,7 +45,6 @@ Originally developed as a final exam project for CS 131 - Data Structures, this 
    
    ```bash
    git clone https://github.com/salvadance/ClockSimulation.git
-   cd ClockSimulation
    ```
 1. **Navigate to the source directory**:
    
