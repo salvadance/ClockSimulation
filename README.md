@@ -39,6 +39,40 @@ Originally developed as a final exam project for CS 131 - Data Structures, this 
   - View comprehensive clock information in tabular format
 - **Customizable Simulation Period**: Run simulations for any specified time duration
 
+## Installation
+
+1. **Clone the repository**:
+   
+   ```bash
+   git clone https://github.com/salvadance/ClockSimulation.git
+   ```
+1. **Navigate to the source directory**:
+   
+   ```bash
+   cd ClockSimulation
+   ```
+1. **Compile the Java files preferably to a bin directory**:
+   
+   ```bash
+   javac -d bin src\ClockProgram\*.java
+   ```
+   ----------------or-------------------------------
+   
+   ```bash
+   javac *.java
+   ```
+   
+1. **Run the application**:
+   
+    ```bash
+    java -cp bin ClockProgram.ClockInterface
+    ```
+    -----------------or--------------------------
+    
+    ```bash
+    java ClockProgram.ClockInterface
+    ```
+
 ## Usage
 
 ### Starting the Application
