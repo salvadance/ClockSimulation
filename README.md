@@ -46,7 +46,7 @@ Originally developed as a final exam project for CS 131 - Data Structures, this 
    ```bash
    git clone https://github.com/salvadance/ClockSimulation.git
    ```
-1. **Navigate to the source directory**:
+1. **Navigate to the project directory**:
    
    ```bash
    cd ClockSimulation
@@ -54,40 +54,21 @@ Originally developed as a final exam project for CS 131 - Data Structures, this 
 1. **Compile the Java files preferably to a bin directory**:
    
    ```bash
-   javac -d bin src\ClockProgram\*.java
+   javac src/ClockProgram/*.java
    ```
-   ----------------or-------------------------------
-   
-   ```bash
-   javac *.java
-   ```
-   
 1. **Run the application**:
-   
-    ```bash
-    java -cp bin ClockProgram.ClockInterface
-    ```
-    -----------------or--------------------------
-    
-    ```bash
-    java ClockProgram.ClockInterface
-    ```
+   ```bash
+    java -cp src ClockProgram.ClockInterface
+   ```
 
 ## Usage
 
 ### Starting the Application
 
 Run the main class to start the interactive menu:
-
-If created a bin:
     
 ```bash
-java -cp bin ClockProgram.ClockInterface
-```
------------------or--------------------------
-
-```bash
-java ClockInterface
+java -cp src ClockProgram.ClockInterface
 ```
 
 ### Menu Options
@@ -133,12 +114,21 @@ ClockSimulation/
 │       └── [Other supporting files]
 │   
 ├── LICENSE                          # MIT License
-└── README.md                        # This file
+└── README.md                        # README FILE
 ```
 
 ## Technical Details
 
 ### Key Classes
+
+
+### `Clock.java`
+- The abstract class and super class
+- Has protected fields so only sub classes has access to those fields.
+- Creates a template for subclasses to follow.
+- Has a constructor for constructor chaining.
+- Cannot instantiate.
+- Makes is easier to call concerete subclasses' methods in an ArrayList or array.
 
 #### `ClockTime.java`
 
