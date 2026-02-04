@@ -52,18 +52,7 @@ public class ClockTime {
         seconds = (int) (secondsOfDay % 60L);
 
         // Update the date based on totalDays passed
-        changeDate(totalDays);
-
-        /* 
-        // Wraps around 24-Hours and correctly formats the clock in military time (00:00:00 <= totalSeconds <= 23:59:59).
-        totalSeconds %= 24L * 3600L;
-        hours = (int) (totalSeconds / 3600L);
-        minutes = (int) ((totalSeconds % 3600L) / 60L);
-        seconds = (int) (totalSeconds % 60L);
-        changeDate(totalDays);
-        */
-
-        
+        changeDate(totalDays);        
 
     }
 
