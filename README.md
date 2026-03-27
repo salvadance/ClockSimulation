@@ -9,7 +9,6 @@ A Java-based simulation program that models the simultaneous operation of multip
 
 - [Overview](#overview)
 - [Features](#features)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Technical Details](#technical-details)
@@ -39,27 +38,6 @@ Originally developed as a final exam project for CS 131 - Data Structures, this 
   - View comprehensive clock information in tabular format
 - **Customizable Simulation Period**: Run simulations for any specified time duration
 
-## Installation
-
-1. **Clone the repository**:
-   
-   ```bash
-   git clone https://github.com/salvadance/ClockSimulation.git
-   ```
-1. **Navigate to the project directory**:
-   
-   ```bash
-   cd ClockSimulation
-   ```
-1. **Compile the Java files preferably to a bin directory**:
-   
-   ```bash
-   javac src/ClockProgram/*.java
-   ```
-1. **Run the application**:
-   ```bash
-    java -cp src ClockProgram.ClockInterface
-   ```
 
 ## Usage
 
